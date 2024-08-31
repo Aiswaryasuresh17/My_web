@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aiswarya Suresh Babu - Digital Marketer Portfolio</title>
+    <!-- Use Google Fonts for different typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            background: #ffffff; /* White background */
+            transition: background-image 1s ease-in-out;
+            animation: backgroundFade 10s infinite alternate;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #0c4b16; /* Vibrant color */
+            color: #ffffff;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Lobster', cursive;
+            position: relative;
+            animation: pulseGlow 4s infinite alternate;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 2px solid #009688;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        .tabs button {
+            background: none;
+            border: none;
+            color: #009688; /* Teal color for text */
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: 'Montserrat', sans-serif;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .tabs button:hover, .tabs button.active {
+            background: #e0f7fa; /* Light teal on hover */
+            color: #004d40;
+            text-shadow: 0 0 10px #004d40;
+            transform: scale(1.1);
+        }
+
+        .tab-content {
+            display: none;
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+            background: #ffffff;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+        }
+
+        .tab-content.active {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .Aiswarya Suresh Babu-me-container {
+            width: 60%;
+            padding: 20px;
+            background: #123d0e; /* Light color background */
+            color: #fff8f8;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.7s, box-shadow 0.3s;
+            text-align: left;
+            position: relative;
+            animation: slideUp 1s ease-out;
+        }
+
+        .Aiswarya Suresh Babu-me-image {
+            width: 30%;
+            margin-left: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .Aiswarya Suresh Babu-me-container p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            z-index: 2;
+            position: relative;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        .skills-list, .education-list {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .skills-list li, .education-list li {
+            background: #ffffff; /* White background for list items */
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            animation: pulse 3s infinite alternate;
+        }
+
+        .skills-list li:hover, .education-list li:hover {
+            transform: scale(1.1);
+            background-color: #e0f7fa; /* Light teal on hover */
+            color: #004d40;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills-list li::after, .education-list li::after {
+            content: attr(data-description);
+            display: block;
+            font-size: 0.8em;
+            color: #555;
+            margin-top: 5px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .experience-section, .internship-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .experience-card, .internship-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            width: 45%;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-in-out;
+            max-height: 80px; /* Initial height to show only title */
+        }
+
+        .experience-card h3, .internship-card h3 {
+            font-size: 1.1em;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+
+        .experience-card p, .internship-card p {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.4;
+            margin: 10px 0 0 0;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+        }
+
+        .experience-card:hover, .internship-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-height: 500px; /* Expands to fit content */
+        }
+
+        .experience-card:hover p, .internship-card:hover p {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 150, 136, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0, 150, 136, 1);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(0, 150, 136, 0.5);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes backgroundFade {
+            0% {
+                background-color: #ffffff;
+            }
+            50% {
+                background-color: #f0f4c3;
+            }
+            100% {
+                background-color: #ffffff;
+            }
+        }
+
+    </style>
+</head>
+<body class="background-fade" id="body">
+
+    <div class="header">
+        <h1>Aiswarya Suresh Babu</h1>
+        <p>Digital Marketer & Content Creator</p>
+        <p>Scarborough, ON | <a href="mailto:ksaiswaray@gmail.com" style="color: #ffffff;">ksaiswaray@gmail.com</a></p>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="showTab('about')">About Me</button>
+        <button class="tab-button" onclick="showTab('skills')">Skills</button>
+        <button class="tab-button" onclick="showTab('education')">Education</button>
+        <button class="tab-button" onclick="showTab('experience')">Experience</button>
+    </div>
+
+    <div id="about" class="tab-content active">
+        <div class="about-me-container">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Aiswarya Suresh Babu, a passionate and results-driven digital marketer with a keen eye for creativity and innovation. My journey into the digital marketing world began out of a love for crafting compelling stories and engaging content that connects with people. After moving to Canada recently, I am excited to explore new challenges and opportunities in this dynamic market. My expertise lies in content creation, SEO, social media management, and data analysis, allowing me to develop strategies that not only boost brand awareness but also drive meaningful engagement. I thrive on staying ahead of trends and continually learning to adapt in the fast-paced environment of digital marketing. With a commitment to excellence and a passion for innovation, I am dedicated to making a positive impact in every project I undertake.
+            </p>
+        </div>
+        <img src="9.jpg" alt="Aiswarya Suresh Babu" class="about-me-image">
+    </div>
+
+    <div id="skills" class="tab-content">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li data-description="Ability to create and manage engaging content on various social media platforms.">Social Media Marketing</li>
+            <li data-description="Expert in using Excel for data analysis and reporting.">Microsoft Excel</li>
+            <li data-description="Proficient in creating compelling presentations for various purposes.">Microsoft PowerPoint</li>
+            <li data-description="Skillful in creating engaging and creative content across different mediums.">Content Creation</li>
+            <li data-description="Experienced in optimizing content for search engines to improve online visibility.">SEO</li>
+            <li data-description="Ability to interpret data and generate actionable insights.">Analytics & Reporting</li>
+            <li data-description="Proficient in managing and optimizing paid advertising campaigns on platforms like Google Ads.">Paid Advertising</li>
+            <li data-description="Strong communication skills for effective collaboration and team management.">Effective Communication</li>
+            <li data-description="Excellent team player, capable of working effectively with others.">Teamwork</li>
+            <li data-description="Well-organized with strong time management skills.">Time Management</li>
+        </ul>
+    </div>
+
+    <div id="education" class="tab-content">
+        <h2>Education</h2>
+        <ul class="education-list">
+            <li data-description="A comprehensive program focusing on the integration of information systems with business strategy and management. Covered advanced topics such as project management, IT governance, and data analytics. Gained practical experience through case studies and real-world projects.">
+                <strong>MBA in Information System</strong>, Bharathiar University (2021-2023)
+            </li>
+            <li data-description="A specialized course designed to provide in-depth knowledge and hands-on experience in digital marketing. Topics included SEO, SEM, social media strategy, and content marketing. Worked on live projects and learned from industry experts.">
+                <strong>Diploma in Digital Marketing</strong>, Aviv Digital, Kochi, India (2019, 6 months)
+            </li>
+            <li data-description="Focused on fundamental and advanced topics in computer science, including programming languages, database management, and software development. Participated in coding competitions and tech fests, building a solid foundation for a career in technology.">
+                <strong>Bachelor of Computer Science</strong>, Christ College Autonomous, Calicut University (2016-2019)
+            </li>
+        </ul>
+    </div>
+
+    <div id="experience" class="tab-content">
+        <h2>Experience</h2>
+        <div class="experience-section">
+            <div class="experience-card">
+                <h3>Digital Marketing Strategist, Amster Group</h3>
+                <p>Conducted market research to identify target audiences, market trends, and competitive analysis. Developed and managed content marketing strategies, including blog posts, articles, videos, and infographics. Managed social media accounts, including content scheduling, posting, and monitoring. Analyzed social media performance and adjusted strategies as needed. Managed paid advertising campaigns on platforms such as Google Ads, Facebook Ads, and LinkedIn Ads.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Social Media Manager, Sensotica The Addictive Soap LLP</h3>
+                <p>Identified target audience and determined the best platforms to reach them. Monitored and engaged with trending topics and hashtags relevant to the brand. Tracked, analyzed, and reported on social media metrics to measure the success of campaigns. Coordinated with graphic designers, videographers, and other creatives for high-quality content production. Managed social media advertising campaigns, including budget allocation and targeting.</p>
+            </div>
+        </div>
+        <h2>Internships</h2>
+        <div class="internship-section">
+            <div class="internship-card">
+                <h3>Digital Marketing Intern, Aviv Digital</h3>
+                <p>Assisted in the development of digital marketing campaigns, including social media, email, and content marketing. Helped in optimizing website content for SEO and improved online visibility. Worked on data analysis to measure the effectiveness of campaigns.</p>
+            </div>
+            <div class="internship-card">
+                <h3>Digital Marketing Intern, Oncliff E-commerce HUB</h3>
+                <p>Supported the e-commerce team in managing online product listings and digital marketing initiatives. Engaged in content creation and management for the company’s e-commerce platform. Assisted with market research and competitive analysis.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+
+            var tabButtons = document.querySelectorAll('.tabs button');
+            tabButtons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
