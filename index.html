@@ -85,11 +85,11 @@
             justify-content: space-between;
         }
 
-        .Aiswarya Suresh Babu-me-container {
+        .about-me-container {
             width: 60%;
             padding: 20px;
-            background: #123d0e; /* Light color background */
-            color: #fff8f8;
+            background: url('9.jpg') no-repeat center center / cover; /* Set background image */
+            color: #ffffff; /* Text color for readability */
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.7s, box-shadow 0.3s;
@@ -98,15 +98,19 @@
             animation: slideUp 1s ease-out;
         }
 
-        .Aiswarya Suresh Babu-me-image {
-            width: 30%;
-            margin-left: 20px;
+        .about-me-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            animation: float 4s ease-in-out infinite;
+            z-index: 1;
         }
 
-        .Aiswarya Suresh Babu-me-container p {
+        .about-me-container p {
             font-size: 0.9em;
             line-height: 1.6;
             z-index: 2;
@@ -326,7 +330,6 @@
                 Hello! I'm Aiswarya Suresh Babu, a passionate and results-driven digital marketer with a keen eye for creativity and innovation. My journey into the digital marketing world began out of a love for crafting compelling stories and engaging content that connects with people. After moving to Canada recently, I am excited to explore new challenges and opportunities in this dynamic market. My expertise lies in content creation, SEO, social media management, and data analysis, allowing me to develop strategies that not only boost brand awareness but also drive meaningful engagement. I thrive on staying ahead of trends and continually learning to adapt in the fast-paced environment of digital marketing. With a commitment to excellence and a passion for innovation, I am dedicated to making a positive impact in every project I undertake.
             </p>
         </div>
-        <img src="9.jpg" alt="Aiswarya Suresh Babu" class="about-me-image">
     </div>
 
     <div id="skills" class="tab-content">
