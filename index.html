@@ -16,15 +16,16 @@
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
-            background: #ffffff; /* White background */
+            background: url('41.jpg') no-repeat center center / cover; /* Set 41.jpg as background for entire page */
             transition: background-image 1s ease-in-out;
             animation: backgroundFade 10s infinite alternate;
+            min-height: 100vh; /* Ensure body takes full height */
         }
 
         .header {
             text-align: center;
             padding: 20px;
-            background: #0c4b16; /* Vibrant color */
+            background: rgba(12, 75, 22, 0.8); /* Vibrant color with transparency */
             color: #ffffff;
             width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -43,7 +44,7 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
             border-bottom: 2px solid #009688;
             animation: slideInFromTop 1s ease-out;
         }
@@ -68,27 +69,27 @@
 
         .tab-content {
             display: none;
-            width: 90%;
+            width: 80%;
             max-width: 1000px;
-            padding: 20px;
-            background: #ffffff;
+            padding: 0;
+            background: transparent;
             margin-top: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: none;
             animation: fadeIn 1s ease-in-out;
             position: relative;
         }
 
         .tab-content.active {
             display: flex;
+            justify-content: center; /* Center the content */
             flex-wrap: wrap;
-            justify-content: space-between;
         }
 
         .about-me-container {
-            width: 60%;
+            width: 70%; /* Adjusted width for centering */
             padding: 20px;
-            background: url('9.jpg') no-repeat center center / cover; /* Set background image */
+            background: url('9.jpg') no-repeat center center / cover; /* Set background image to 9.jpg */
             color: #ffffff; /* Text color for readability */
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -96,6 +97,7 @@
             text-align: left;
             position: relative;
             animation: slideUp 1s ease-out;
+            max-width: 100%; /* Ensure it doesn't overflow */
         }
 
         .about-me-container::before {
@@ -327,7 +329,7 @@
         <div class="about-me-container">
             <h2>About Me</h2>
             <p>
-                Hello! I'm Aiswarya Suresh Babu, a passionate and results-driven digital marketer with a keen eye for creativity and innovation. My journey into the digital marketing world began out of a love for crafting compelling stories and engaging content that connects with people. After moving to Canada recently, I am excited to explore new challenges and opportunities in this dynamic market. My expertise lies in content creation, SEO, social media management, and data analysis, allowing me to develop strategies that not only boost brand awareness but also drive meaningful engagement. I thrive on staying ahead of trends and continually learning to adapt in the fast-paced environment of digital marketing. With a commitment to excellence and a passion for innovation, I am dedicated to making a positive impact in every project I undertake.
+                Hello! I'm Aiswarya Suresh Babu, a passionate and results-driven digital marketer with a strong background in content creation, social media management, and digital strategy. My journey into digital marketing began with a deep interest in understanding how brands connect with their audiences. With an MBA in Information Systems and a diploma in digital marketing, I bring a blend of technical expertise and creative thinking to every project. My experience includes managing campaigns for diverse brands, driving engagement through innovative content, and leveraging data analytics to inform strategic decisions. Recently relocated to Canada, I am excited to apply my skills to new challenges, enhance brand visibility, and contribute to the success of forward-thinking organizations. I thrive in dynamic environments where I can continuously learn, adapt, and contribute to meaningful projects.
             </p>
         </div>
     </div>
